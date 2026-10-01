@@ -75,7 +75,7 @@ SSE ingest → Assembler (per-trace timer) → Fingerprinter (WL hash)
 
 Each trace updates **all 20 combinations** by default (configurable via `LEARN_COMBINATIONS`). The active combination drives the UI and alerts; the other 19 learn silently for comparison.
 
-| Variant | Use case | Default min-samples |
+| Variant | Behavior | Default min-samples |
 |---------|----------|---------------------|
 | `cumulative` | Stable, all-history reservoir | 50 |
 | `ewma` | Fast adaptation to recent shifts | 500 |
@@ -83,7 +83,7 @@ Each trace updates **all 20 combinations** by default (configurable via `LEARN_C
 | `exponential_decay` | Gradual forgetting | 5000 |
 | `same_time_yesterday` | Daily seasonality | 500 |
 
-See [docs/BASELINE_STRATEGIES.md](docs/BASELINE_STRATEGIES.md) for the math and API.
+See [docs/DESIGN.md](docs/DESIGN.md) for the baseline strategies and key decisions.
 
 ## Known limits (honest)
 
@@ -93,7 +93,7 @@ See [docs/BASELINE_STRATEGIES.md](docs/BASELINE_STRATEGIES.md) for the math and 
 - **Memory grows** with unique paths per service — 20 combinations × path count.
 - **Only active combination** survives restart unless `ACTIVE_COMBINATION` is set.
 
-See [docs/RESEARCH_QUESTIONS.md](docs/RESEARCH_QUESTIONS.md) for the full list.
+See [docs/DESIGN.md](docs/DESIGN.md) for the known limits.
 
 ## Tech stack
 
