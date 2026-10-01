@@ -85,6 +85,12 @@ Each trace updates **all 20 combinations** by default (configurable via `LEARN_C
 
 See [docs/DESIGN.md](docs/DESIGN.md) for the baseline strategies and key decisions.
 
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the system diagram and data flow invariants.
+
+See [docs/ENGINEERING_DECISIONS.md](docs/ENGINEERING_DECISIONS.md) for the staff-engineer decision log (trade-offs, rejected alternatives, what we'd revisit).
+
+See [docs/LIMITATIONS.md](docs/LIMITATIONS.md) for the honest limits — no ground-truth eval, scalability bounds, operational gaps.
+
 ## Known limits (honest)
 
 - **Detection accuracy** has no ground-truth evaluation — the scores are heuristic.
